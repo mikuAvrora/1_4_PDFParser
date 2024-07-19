@@ -15,7 +15,7 @@ import requests
 workbook = openpyxl.Workbook()
 sheet = workbook.active
 sheet['A1'] = 'Номер заказа'
-sheet['B1'] = 'Номер заказа и КТ'
+sheet['B1'] = '№ Заказа на работу'
 sheet['C1'] = 'Дата'
 sheet['D1'] = 'Сумма'
 sheet['E1'] = 'Базовая станция'
