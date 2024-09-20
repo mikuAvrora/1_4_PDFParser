@@ -19,6 +19,7 @@ sheet['B1'] = '№ Заказа на работу'
 sheet['C1'] = 'Дата подписания заказа заказчиком'
 sheet['D1'] = 'Сумма'
 sheet['E1'] = 'Базовая станция'
+sheet['F1'] = 'Статус заказа'
 
 red_fill = PatternFill(start_color='FFFF0000',
                     end_color='FFFF0000',
@@ -99,6 +100,7 @@ def process_files():
                 sheet[f'C{index}'] = date
                 sheet[f'D{index}'] = sum[i]
                 sheet[f'E{index}'] = BS_list[i]
+                sheet[f'F{index}'] = 'согласовано'
 
                 BS_for_comment = None
                 if '"' in BS_list[i]:
