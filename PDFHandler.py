@@ -55,14 +55,15 @@ def process_files():
             num_pages = len(pdf_reader.pages)
 
             pattern_order = r'Заказ № (\d+)'
-            pattern_date = r'(\d{2}\.\d{2})\.(\d{2})'
+            pattern_date = r'(\d{2}\.\d{2})\.(\d{4})'
 
             page = pdf_reader.pages[0].extract_text()
             order_num = re.search(pattern_order, page).group(1)
-            year = re.search(pattern_date, page).group(2)
-            year = "20"+ year
+            # year = re.search(pattern_date, page).group(2)
+            # year = "20"+ year
 
-            date = re.search(pattern_date, page).group(1) + '.' + year
+            date = re.search(pattern_date, page).group(0)
+            print(date)
             # kt_res = re.findall(r'\[\s*([A-Z0-9/]+\s*)\]', page)
             # #print(kt_res)
             # Kt = [kti for kti in kt_res if re.match(r'[A-Z]{2}/\d{4}/[A-Z\d]+', kti)]
